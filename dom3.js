@@ -33,6 +33,8 @@ function addItem(e){
     //to add this on submit
     li.appendChild(deleteBtn)
     itemList.appendChild(li)
+    EditItem(li,deleteBtn)
+    
     
 }
 
@@ -44,4 +46,18 @@ function removeItem(e){
             itemList.removeChild(li);
         }
     }
+}
+
+//Edit Functionality
+function EditItem(li,deleteBtn){
+
+    let editBtn = document.createElement('button');
+    editBtn.className ='btn btn-info btn-sm float-right';
+    editBtn.style.marginLeft = "2%";
+
+    editBtn.appendChild(document.createTextNode("Edit"));
+
+    // deleteBtn.insertAdjacentElement('afterend', editBtn);
+    li.insertBefore(editBtn,deleteBtn)
+
 }
